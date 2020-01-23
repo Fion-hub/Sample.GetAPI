@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Sample.GetAPI.Models.InteriorModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Web API Data</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telephon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.website)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telephon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.website)
+        </td>
+
+
+    </tr>
+}
+
+</table>
