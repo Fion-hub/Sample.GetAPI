@@ -44,12 +44,18 @@ namespace Sample.GetAPI.Controllers
 
                 using (var context = new InteriorEntitiee())
                 {
+                
+                    int count = context.Interiors.Where(x => x.unit == item.unit).Count();
+                    
+                    if (count > 0)
+                    {
+                        Interior obj = context.Interiors.Single(x => x.unit == It.unit);
+                        context.Entry(obj).State = EntityState.Deleted;
+                        context.SaveChanges();
+                    }
 
-                  Interior obj = context.Interiors.Single(x => x.unit == It.unit);
-                  context.Entry(obj).State = EntityState.Deleted;
-                  context.SaveChanges();
+                    context.Interiors.Add(It);
 
-                  context.Interiors.Add(It);
 
                     try
                     {
